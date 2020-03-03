@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <title>Date of Birth List</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+</head>
+<body>
+<div class="card">
+    <header>
+        <h4 class="text-center">Date of Birth List</h4>
+    </header>
+    <table class="stripped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for dob in dob_list %}
+        <tr>
+            <th>{{loop.index}}</th>
+            <td>{{dob}}</td>
+            <td>{{dob | calculate_date_date('%d/%m/%Y')}} years</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
